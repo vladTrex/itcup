@@ -3,3 +3,5 @@
 npm-debug.log*
 .idea/
 node_modules/
+logs/
+logs.txt

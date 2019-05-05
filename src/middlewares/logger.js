@@ -1,5 +1,9 @@
+import Logger from '../utils/Logger';
+
+const loggerUtil = new Logger;
+
 export default (req, res, next) => {
-    console.log(`Request from: ${req.originalUrl}`);
-    console.log(`Request type: ${req.method}`);
+    loggerUtil.changeStrategy('toFile');
+    loggerUtil.log(`Request from: ${req.originalUrl}, method: ${req.method}`);
     next();
 };
