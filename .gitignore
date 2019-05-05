@@ -1,0 +1,5 @@
+.DS_Store
+*.exe
+npm-debug.log*
+.idea/
+node_modules/
