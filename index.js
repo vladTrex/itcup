@@ -12,6 +12,7 @@ const PORT = 3000;
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://admin:admin1234@ds149676.mlab.com:49676/itcup', {
     useNewUrlParser: true,
+    useCreateIndex: true,
 });
 
 // bodyParser

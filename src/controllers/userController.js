@@ -39,7 +39,7 @@ export const login = (req, res) => {
                         username: user.username,
                         _id: user.id
                     }, 'RESTFULAPIs')
-                });
+                }); // TODO: need to add expiresIn
             }
         }
     });

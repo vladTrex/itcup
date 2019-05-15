@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import {validationResult} from 'express-validator/check';
 
 import {ContactSchema} from '../models/crmModel';
 
@@ -27,6 +28,12 @@ export const getContacts = (req, res) => {
 };
 
 export const getContactWithId = (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        return res.status(422).json({errors: errors.array()});
+    }
+    
     Contact.findById(req.params.contactId, (err, contact) => {
         if(err) {
             res.send(err);

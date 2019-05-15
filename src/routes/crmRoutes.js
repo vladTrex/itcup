@@ -1,3 +1,5 @@
+import {check} from 'express-validator/check';
+
 import {
     addNewContact,
     getContacts,
@@ -8,6 +10,7 @@ import {
 import logger from '../middlewares/logger';
 import {register, login, loginRequired} from '../controllers/userController';
 
+const validateContactRequest = [check('contactId').isMongoId()];
 
 const crmRoutes = app => {
     app.route('/contact')
@@ -18,7 +21,7 @@ const crmRoutes = app => {
         .post(loginRequired, addNewContact);
 
     app.route('/contact/:contactId')
-        .get(loginRequired, getContactWithId)
+        .get(validateContactRequest, loginRequired, getContactWithId)
         .put(loginRequired, updateContact)
         .delete(loginRequired,deleteContact);
 
