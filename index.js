@@ -19,6 +19,12 @@ mongoose.connect('mongodb://admin:admin1234@ds149676.mlab.com:49676/itcup', {
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+// cors
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  next();
+});
 
 // JWT setup
 app.use((req, res, next) => {
