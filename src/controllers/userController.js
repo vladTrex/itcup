@@ -31,15 +31,16 @@ export const login = (req, res) => {
             });
         } else if (user) {
             if (!user.comparePassword(req.body.password, user.hashPassword)) {
-                res.status(401).json({message: 'Authentication failed. Wrong password./'});
+                res.status(401).json({message: 'Authentication failed. Wrong password.'});
             } else {
                 return res.json({
                     token: jwt.sign({
                         email: user.email,
                         username: user.username,
-                        _id: user.id
+                        _id: user.id,
+                        expiresIn:  "12h",
                     }, 'RESTFULAPIs')
-                }); // TODO: need to add expiresIn
+                });
             }
         }
     });
