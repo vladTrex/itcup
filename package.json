@@ -1,10 +1,12 @@
 {
   "name": "itcup",
   "version": "1.0.0",
-  "description": "",
+  "description": "basic node api",
+  "repository": "https://github.com/vladTrex/itcup",
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./index.js --exec babel-node -e js",
+    "lint-code": "eslint src/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -28,6 +30,12 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-import": "^2.17.3"
+    "eslint-plugin-import": "^2.17.3",
+    "husky": "^2.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-code"
+    }
   }
 }
