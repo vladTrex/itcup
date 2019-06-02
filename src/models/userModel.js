@@ -8,7 +8,7 @@ export const UserSchema = new Schema({
     username: {
         type: String,
         required: true,
-        trim: true,
+        trim: true
     },
     email: {
         type: String,
@@ -19,16 +19,16 @@ export const UserSchema = new Schema({
         validate: {
             validator: emailValidator.validate,
             message: props => `${props.value} is not a valid email address.`
-        },
+        }
     },
     hashPassword: {
         type: String,
         required: true,
-        minlength: 6,
+        minlength: 6
     },
     created_at: {
         type: Date,
-        default: Date.now,
+        default: Date.now
     }
 });
 

@@ -27,7 +27,7 @@ export const login = (req, res) => {
 
         if(!user){
             res.status(401).json({
-                message: 'Authentication failed. No user found.',
+                message: 'Authentication failed. No user found.'
             });
         } else if (user) {
             if (!user.comparePassword(req.body.password, user.hashPassword)) {
@@ -38,7 +38,7 @@ export const login = (req, res) => {
                         email: user.email,
                         username: user.username,
                         _id: user.id,
-                        expiresIn:  "12h",
+                        expiresIn:  '12h'
                     }, 'RESTFULAPIs')
                 });
             }

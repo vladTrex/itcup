@@ -10,7 +10,7 @@ class LoggerStrategy {
                 console.log('Error writing to file');
                 console.error(error);
             }
-        })
+        });
     }
 
     static toConsole(timestamp, message){

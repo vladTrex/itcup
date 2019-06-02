@@ -12,13 +12,13 @@ export const ContactSchema = new Schema({
         required: 'Enter a last name'
     },
     email: {
-        type: String,
+        type: String
     },
     company: {
-        type: String,
+        type: String
     },
     phone: {
-        type: Number,
+        type: Number
     },
     created_at: {
         type: Date,

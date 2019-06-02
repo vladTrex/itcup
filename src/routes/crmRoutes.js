@@ -5,7 +5,7 @@ import {
     getContacts,
     getContactWithId,
     updateContact,
-    deleteContact,
+    deleteContact
 } from '../controllers/crmController';
 import logger from '../middlewares/logger';
 import {register, login, loginRequired} from '../controllers/userController';
