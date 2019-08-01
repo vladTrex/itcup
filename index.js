@@ -18,7 +18,6 @@ mongoose.connect('mongodb://admin:admin1234@ds149676.mlab.com:49676/itcup', {
 // bodyParser
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-const a = [a,b];
 // cors
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
